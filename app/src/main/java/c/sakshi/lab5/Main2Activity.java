@@ -33,6 +33,11 @@ public class Main2Activity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    private void goToActivity3() {
+        Intent intent = new Intent(this, Main3Activity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -52,7 +57,7 @@ public class Main2Activity extends AppCompatActivity {
                 return true;
 
             case R.id.note:
-                //
+                goToActivity3();
                 return true;
 
             default:
