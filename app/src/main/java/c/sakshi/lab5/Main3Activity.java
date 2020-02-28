@@ -52,7 +52,12 @@ public class Main3Activity extends AppCompatActivity {
         //initialize db helper class
         DBHelper db = new DBHelper(sqLiteDatabase);
         //set username by fetching it from sharedpreferences
-        String username = "<get from shared preferences>";
+
+        String usernameKey = "username";
+        SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
+        String str = sharedPreferences.getString(usernameKey,"");
+
+        String username = str;
         //save information to db
         String title;
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
@@ -66,7 +71,11 @@ public class Main3Activity extends AppCompatActivity {
             db.updateNote(title,date,content);
         }
         //go to second activity
+
+
+
         Intent intent = new Intent(this, Main2Activity.class);
+        intent.putExtra("Welcome",username);
         startActivity(intent);
     }
 }

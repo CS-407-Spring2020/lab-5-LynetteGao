@@ -90,7 +90,6 @@ public class Main2Activity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.logout:
-
                 SharedPreferences sharedPreferences = getSharedPreferences("c.sakshi.lab5", Context.MODE_PRIVATE);
                 sharedPreferences.edit().remove("username").apply();
                 goToActivity1();
